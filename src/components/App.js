@@ -14,10 +14,18 @@ function App() {
 
   }, [])
 
+  function handleDelete (container) {
+
+    console.log(container)
+
+  }
+
+  useEffect(()=>{},[])
+
   return (
     <div className="app">
       <Header />
-      <ListingsContainer listingData = {listingData}/>
+      <ListingsContainer listingData = {listingData} handleDelete = {handleDelete}/>
     </div>
   );
 }
