@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <ListingsContainer />
+      <ListingsContainer listingData = {listingData}/>
     </div>
   );
 }

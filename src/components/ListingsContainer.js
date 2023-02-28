@@ -3,11 +3,14 @@ import ListingCard from "./ListingCard";
 
 
 
-function ListingsContainer() {
+function ListingsContainer({listingData}) {
+  console.log(listingData)
   return (
     <main>
       <ul className="cards">
-        {/* use the ListingCard component to display listings */}
+      {listingData.map(
+         (listing) => { return <ListingCard {...listing} key = {listing.id}/>}
+      )}
       </ul>
     </main>
   );
