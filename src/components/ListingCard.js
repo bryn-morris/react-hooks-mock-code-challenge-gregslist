@@ -7,6 +7,10 @@ function ListingCard({ iD, description, image, location, handleDelete }) {
     setFavorited((favorited) => !favorited);
   };
 
+  function onDeleteClick (e) {
+    handleDelete (e.target.value)
+  }
+
   return (
     <li className="card">
       <div className="image">
@@ -28,7 +32,9 @@ function ListingCard({ iD, description, image, location, handleDelete }) {
         )}
         <strong>{description}</strong>
         <span> · {location}</span>
-        <button className="emoji-button delete" value = {iD}>🗑</button>
+        <button 
+        onClick={onDeleteClick}
+        className="emoji-button delete" value = {iD}>🗑</button>
       </div>
     </li>
   );

@@ -16,12 +16,15 @@ function App() {
 
   function handleDelete (container) {
 
-    console.log(container)
-
   }
 
-  useEffect(()=>{},[])
-
+  
+  const handleDeleteUseEffect => ()
+  useEffect(()=>{
+      
+    fetch(`http://localhost:6001/listings/${container}`, {method:"DELETE"})
+    
+  },[])
   return (
     <div className="app">
       <Header />
