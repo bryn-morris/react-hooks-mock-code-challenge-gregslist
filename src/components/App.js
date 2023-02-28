@@ -4,12 +4,13 @@ import ListingsContainer from "./ListingsContainer";
 
 function App() {
 
-  const [listingData, setListingData] = useState('')
+  const [listingData, setListingData] = useState([])
 
   useEffect(()=>{
 
-    fetch("http://localhost:6001")
-      .then(response => response.json)
+    fetch("http://localhost:6001/listings")
+      .then(response => response.json())
+      .then(listDataArray => setListingData(listDataArray))
 
   }, [])
 
