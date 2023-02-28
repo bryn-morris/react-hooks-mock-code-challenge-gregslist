@@ -8,7 +8,7 @@ function ListingCard({ iD, description, image, location, handleDelete }) {
   };
 
   function onDeleteClick (e) {
-    handleDelete (e.target.value)
+    handleDelete (iD)
   }
 
   return (
@@ -34,7 +34,7 @@ function ListingCard({ iD, description, image, location, handleDelete }) {
         <span> · {location}</span>
         <button 
         onClick={onDeleteClick}
-        className="emoji-button delete" value = {iD}>🗑</button>
+        className="emoji-button delete">🗑</button>
       </div>
     </li>
   );

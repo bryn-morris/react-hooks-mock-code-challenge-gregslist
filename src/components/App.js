@@ -14,17 +14,20 @@ function App() {
 
   }, [])
 
-  function handleDelete (container) {
+  function handleDelete (objID) {
+      const newArray = listingData.filter(lObj => {
 
-  }
 
-  
-  const handleDeleteUseEffect => ()
-  useEffect(()=>{
+        return (lObj.id !== objID)
+      })
+         
       
-    fetch(`http://localhost:6001/listings/${container}`, {method:"DELETE"})
-    
-  },[])
+      setListingData(newArray)
+       
+      // fetch(`http://localhost:6001/listings/${objID}`, {method:"DELETE"})
+      //   .then(deletePromiseResponse => console.log(`deleted Object with key of: ${objID}!`))
+  }
+  
   return (
     <div className="app">
       <Header />
